@@ -58,6 +58,25 @@ Figure 02  Encoder 8 * 3
 Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
 
 Developed by: BHUVANESH S R RegisterNumber:212223240017
+//ENCODER 4x2
+module ex5(a0,a1,y0,y1,y2,y3);
+input y0,y1,y2,y3;
+output a0,a1;
+assign a1=y3+y2;
+assign a0=y3+((~y2)&y1);
+endmodule
+
+//DECODER 2x4
+module ex5(d0,d1,d2,d3,a,b);
+output d0,d1,d2,d3;
+input a,b;
+assign d0=((~a)&(~b));
+assign d1=((~a)&b);
+assign d2=(a&(~b));
+assign d3=(a&b);
+endmodule
+
+//ENCODER 8x3
 module ex5(din,a,b,c);
 input[0:7] din;
 output a,b,c;
@@ -67,6 +86,29 @@ assign c=(din[1] | din[3] | din[5] | din[7]);
 endmodule
 
 ```
+
+
+**RTL LOGIC FOR Encoder 4 To 2 in Dataflow Modelling**
+![output netlist encoder 4x2](https://github.com/Bhuvanesh-Suresh/ENCODER8TO3DATAFLOW/assets/145742661/a1257128-41d6-4f07-801c-9f5d06c9c458)
+
+
+
+
+**TIMING DIGRAMS FOR Encoder 4 To 2 in Dataflow Modelling**
+![output waveform encoder 4x2](https://github.com/Bhuvanesh-Suresh/ENCODER8TO3DATAFLOW/assets/145742661/01ac7a7c-342d-4138-b9a5-5388cd4cd1d5)
+
+
+
+**RTL LOGIC FOR Decoder 2 To 4 in Dataflow Modelling**
+![output netlist decoder 2x4](https://github.com/Bhuvanesh-Suresh/ENCODER8TO3DATAFLOW/assets/145742661/4d2ab47b-4cfb-42c1-8707-29ca47ffa1af)
+
+
+
+
+**TIMING DIGRAMS FOR Decoder 2 To 4 in Dataflow Modelling**
+![output waveform decoder 2x4](https://github.com/Bhuvanesh-Suresh/ENCODER8TO3DATAFLOW/assets/145742661/532213d0-c94d-4018-b0c9-b02e9c4b12fa)
+
+
 
 
 **RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
